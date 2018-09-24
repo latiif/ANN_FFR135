@@ -3,4 +3,4 @@ project(Training)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Training main.cpp TrainingSet.cpp TrainingSet.h Network.cpp Network.h)
+add_executable(Training main.cpp DataSet.cpp DataSet.h Network.cpp Network.h Misc.cpp Misc.h)

@@ -9,11 +9,11 @@
 
 #define DATASET_LENGTH 10000
 
-class TrainingSet {
+class DataSet {
 public:
     double samples[DATASET_LENGTH][2];
     int targets[DATASET_LENGTH];
-    TrainingSet(std::string filename);
+    DataSet(std::string filename);
 };
 
 

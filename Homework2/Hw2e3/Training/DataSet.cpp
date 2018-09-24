@@ -3,10 +3,10 @@
 //
 
 #include <string.h>
-#include "TrainingSet.h"
+#include "DataSet.h"
 #include "fstream"
 
-TrainingSet::TrainingSet(std::string filename) {
+DataSet::DataSet(std::string filename) {
 
 
     std::ifstream ifs (filename, std::ifstream::in);

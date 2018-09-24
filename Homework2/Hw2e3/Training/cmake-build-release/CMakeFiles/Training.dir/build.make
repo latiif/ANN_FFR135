@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Training.dir/depend.make
@@ -59,7 +59,7 @@ include CMakeFiles/Training.dir/flags.make
 
 CMakeFiles/Training.dir/main.cpp.o: CMakeFiles/Training.dir/flags.make
 CMakeFiles/Training.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Training.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Training.dir/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Training.dir/main.cpp.o -c "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/main.cpp"
 
 CMakeFiles/Training.dir/main.cpp.i: cmake_force
@@ -72,7 +72,7 @@ CMakeFiles/Training.dir/main.cpp.s: cmake_force
 
 CMakeFiles/Training.dir/DataSet.cpp.o: CMakeFiles/Training.dir/flags.make
 CMakeFiles/Training.dir/DataSet.cpp.o: ../DataSet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Training.dir/DataSet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Training.dir/DataSet.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Training.dir/DataSet.cpp.o -c "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/DataSet.cpp"
 
 CMakeFiles/Training.dir/DataSet.cpp.i: cmake_force
@@ -85,7 +85,7 @@ CMakeFiles/Training.dir/DataSet.cpp.s: cmake_force
 
 CMakeFiles/Training.dir/Network.cpp.o: CMakeFiles/Training.dir/flags.make
 CMakeFiles/Training.dir/Network.cpp.o: ../Network.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Training.dir/Network.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Training.dir/Network.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Training.dir/Network.cpp.o -c "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.cpp"
 
 CMakeFiles/Training.dir/Network.cpp.i: cmake_force
@@ -98,7 +98,7 @@ CMakeFiles/Training.dir/Network.cpp.s: cmake_force
 
 CMakeFiles/Training.dir/Misc.cpp.o: CMakeFiles/Training.dir/flags.make
 CMakeFiles/Training.dir/Misc.cpp.o: ../Misc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Training.dir/Misc.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Training.dir/Misc.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Training.dir/Misc.cpp.o -c "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Misc.cpp"
 
 CMakeFiles/Training.dir/Misc.cpp.i: cmake_force
@@ -125,7 +125,7 @@ Training: CMakeFiles/Training.dir/Network.cpp.o
 Training: CMakeFiles/Training.dir/Misc.cpp.o
 Training: CMakeFiles/Training.dir/build.make
 Training: CMakeFiles/Training.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Training"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Training"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Training.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/Training.dir/clean:
 .PHONY : CMakeFiles/Training.dir/clean
 
 CMakeFiles/Training.dir/depend:
-	cd "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles/Training.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Training.dir/depend
 
