@@ -6,15 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/latiif/Desktop/Hw2e3/Training/TrainingSet.cpp
-string.h
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.cpp
+Network.h
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.h
+vector
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/vector
+math.h
 -
-TrainingSet.h
-/home/latiif/Desktop/Hw2e3/Training/TrainingSet.h
-fstream
-/home/latiif/Desktop/Hw2e3/Training/fstream
+random
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/random
 
-/home/latiif/Desktop/Hw2e3/Training/TrainingSet.h
-string
-/home/latiif/Desktop/Hw2e3/Training/string
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.h
+vector
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/vector
 
