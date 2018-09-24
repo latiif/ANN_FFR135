@@ -1,0 +1,4 @@
+/home/latiif/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4505.18/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/latiif/Desktop/Hw2e3/Training
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/latiif/Desktop/Hw2e3/Training/cmake-build-debug

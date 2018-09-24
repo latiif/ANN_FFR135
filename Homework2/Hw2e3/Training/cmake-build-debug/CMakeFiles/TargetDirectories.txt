@@ -1,0 +1,3 @@
+/home/latiif/Desktop/Hw2e3/Training/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/latiif/Desktop/Hw2e3/Training/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/latiif/Desktop/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir

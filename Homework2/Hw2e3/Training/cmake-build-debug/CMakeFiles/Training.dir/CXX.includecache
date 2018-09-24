@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/latiif/Desktop/Hw2e3/Training/TrainingSet.cpp
+string.h
+-
+TrainingSet.h
+/home/latiif/Desktop/Hw2e3/Training/TrainingSet.h
+fstream
+/home/latiif/Desktop/Hw2e3/Training/fstream
+
+/home/latiif/Desktop/Hw2e3/Training/TrainingSet.h
+string
+/home/latiif/Desktop/Hw2e3/Training/string
+

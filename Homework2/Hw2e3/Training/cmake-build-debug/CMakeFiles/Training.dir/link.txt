@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Training.dir/main.cpp.o CMakeFiles/Training.dir/TrainingSet.cpp.o CMakeFiles/Training.dir/Network.cpp.o  -o Training 
