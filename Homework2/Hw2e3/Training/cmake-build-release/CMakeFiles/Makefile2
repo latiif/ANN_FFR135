@@ -59,10 +59,10 @@ RM = /home/latiif/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4505.18/bin
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training"
+CMAKE_SOURCE_DIR = /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release"
+CMAKE_BINARY_DIR = /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release
 
 #=============================================================================
 # Target rules for target CMakeFiles/Training.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/
 CMakeFiles/Training.dir/all:
 	$(MAKE) -f CMakeFiles/Training.dir/build.make CMakeFiles/Training.dir/depend
 	$(MAKE) -f CMakeFiles/Training.dir/build.make CMakeFiles/Training.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" --progress-num=1,2,3,4,5 "Built target Training"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles --progress-num=1,2,3,4,5 "Built target Training"
 .PHONY : CMakeFiles/Training.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/Training.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Training.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Training.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release/CMakeFiles 0
 .PHONY : CMakeFiles/Training.dir/rule
 
 # Convenience name for target.

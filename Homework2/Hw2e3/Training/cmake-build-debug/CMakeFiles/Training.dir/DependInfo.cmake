@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/DataSet.cpp" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/DataSet.cpp.o"
-  "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Misc.cpp" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/Misc.cpp.o"
-  "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.cpp" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/Network.cpp.o"
-  "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/main.cpp" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/main.cpp.o"
+  "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/DataSet.cpp" "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/DataSet.cpp.o"
+  "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Misc.cpp" "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/Misc.cpp.o"
+  "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Network.cpp" "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/Network.cpp.o"
+  "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/main.cpp" "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

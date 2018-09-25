@@ -1,4 +1,4 @@
-/home/latiif/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4505.18/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training"
+/home/latiif/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.4505.18/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training
 -- The C compiler identification is GNU 7.3.0
 -- The CXX compiler identification is GNU 7.3.0
 -- Check for working C compiler: /usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release
+-- Build files have been written to: /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-release
