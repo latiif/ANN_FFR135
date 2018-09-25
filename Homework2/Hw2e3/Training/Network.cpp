@@ -159,7 +159,7 @@ double Network::train(Inputs *pattern, int target) {
         errors->at(j) = error;
 
         for (int i = 0; i < w1->at(j).size(); i ++) {
-            (*w1)[j][i] += this->learningRate * error * layerOne->first->at(i);
+            (*w1)[j][i] += this->learningRate * error * pattern->at(i);
         }
         th1->at(j) += this->learningRate * error;
     }
