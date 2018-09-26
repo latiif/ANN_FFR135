@@ -4,7 +4,7 @@ do
 	do
 		for t in $(seq 1 100)
 		do
-			./Training $m1 $m2 >> result.txt
+			./Training 27 9 >> result.txt
 		done
 	done
 done

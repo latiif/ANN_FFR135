@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/DataSet.cpp
+string.h
+-
+DataSet.h
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/DataSet.h
+fstream
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/fstream
+
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/DataSet.h
+string
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/string
+
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Misc.cpp
+Misc.h
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Misc.h
+random
+-
+
 /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Misc.h
 
 /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Network.cpp
@@ -23,4 +41,16 @@ Misc.h
 /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Network.h
 vector
 /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/vector
+
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/main.cpp
+iostream
+-
+DataSet.h
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/DataSet.h
+Network.h
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Network.h
+Misc.h
+/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/Misc.h
+cstdlib
+-
 

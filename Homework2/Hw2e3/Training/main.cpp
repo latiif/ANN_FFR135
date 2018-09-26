@@ -19,15 +19,23 @@ int main(int argc, char **argv) {
     m2 = atoi(argv[2]);
 
 
-    auto network = new Network(m1, m2, 0.005);
+    auto network = new Network(m1, m2, 0.01);
 
 
+    /*
     for (int t = 0; t < T; t++) {
 
         auto mu = (int) Misc::generateRandom(0, 10000);
         network->train(train->samples[mu], 2, train->targets[mu]);
     }
+*/
 
+
+    for (int t = 0; t < 5000; t++) {
+
+        auto mu = (int) Misc::generateRandom(0, 5000);
+        network->train(validation->samples[mu], 2, validation->targets[mu]);
+    }
 
     int correct = 0;
     int pValue = 5000;
@@ -44,7 +52,8 @@ int main(int argc, char **argv) {
 
 
 
-    std::cout<<correct<<'\t' << accuracy << '\t' << m1 << '\t' << m2 << std::endl;
+    if (accuracy<=0.2)
+        std::cout<<correct<<'\t' << accuracy << '\t' << m1 << '\t' << m2 << std::endl;
 
 
     delete network;
