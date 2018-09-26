@@ -23,6 +23,7 @@ private:
 
     double learningRate;
 
+    void updateWeightMatrixAndTheta(WeightMatrix *w, Threshold* threshold, Errors *error, Activations *activations);
     void setSize(WeightMatrix* weightMatrix,int d1, int d2);
     double activationFunction(double field);
     inline void initThreshold(int size, Threshold* threshold);

@@ -111,9 +111,10 @@ double Network::train(Inputs *pattern, int target) {
     auto outputLayer = calculateValues(layerTwo->first, w3, th3, layerTwo->first->size(), w3->size());
 
 
-    auto errors = new Errors(Misc::max(th2->size(),th1->size()));
+    Errors* errors[3];
 
     /// Train the output layer w3,th3
+    errors[2] = new Errors(1);
     for (int i = 0; i < 1; i ++) {
         double error;
         double field = outputLayer->second->at(i);
@@ -121,50 +122,59 @@ double Network::train(Inputs *pattern, int target) {
 
         error = activationFunctionDerivative(field) * (target - prediction);
 
-        errors->at(i) = error;
+        errors[2]->at(i) = error;
 
-        for (int j = 0; j < w3->at(i).size(); j ++) {
-            (*w3)[i][j] += this->learningRate * error * layerTwo->first->at(j);
-        }
-        th3->at(i) += this->learningRate * error;
+//        for (int j = 0; j < w3->at(i).size(); j ++) {
+//            (*w3)[i][j] += this->learningRate * error * layerTwo->first->at(j);
+//        }
+//        th3->at(i) += this->learningRate * error;
     }
 
     /// Train the second hidden layer w2, th2
+    errors[1] = new Errors(th2->size());
+
     for (int j = 0; j < th2->size(); j ++) {
         double error = 0.0;
         double field = layerTwo->second->at(j);
 
 
         for (int i = 0; i < th3->size(); i ++) {
-            error += errors->at(i) * (*w3)[i][j] * activationFunctionDerivative(field);
+            error += errors[2]->at(i) * (*w3)[i][j] * activationFunctionDerivative(field);
         }
-        errors->at(j) = error;
+        errors[1]->at(j) = error;
 
-        for (int i = 0; i < w2->at(j).size(); i ++) {
-            (*w2)[j][i] += this->learningRate * error * layerOne->first->at(i);
-        }
-        th2->at(j) += this->learningRate * error;
+//        for (int i = 0; i < w2->at(j).size(); i ++) {
+//            (*w2)[j][i] += this->learningRate * error * layerOne->first->at(i);
+//        }
+//        th2->at(j) += this->learningRate * error;
     }
 
 
     /// Train the first hidden layer w1, th1
+    errors[0] = new Errors(th1->size());
+
     for (int j = 0; j < th1->size(); j ++) {
         double error = 0.0;
         double field = layerOne->second->at(j);
 
 
         for (int i = 0; i < th2->size(); i ++) {
-            error += errors->at(i) * (*w2)[i][j] * activationFunctionDerivative(field);
+            error += errors[1]->at(i) * (*w2)[i][j] * activationFunctionDerivative(field);
         }
-        errors->at(j) = error;
+        errors[0]->at(j) = error;
 
-        for (int i = 0; i < w1->at(j).size(); i ++) {
-            (*w1)[j][i] += this->learningRate * error * pattern->at(i);
-        }
-        th1->at(j) += this->learningRate * error;
+//        for (int i = 0; i < w1->at(j).size(); i ++) {
+//            (*w1)[j][i] += this->learningRate * error * layerOne->first->at(i);
+//        }
+//        th1->at(j) += this->learningRate * error;
     }
 
-    delete errors;
+
+    /// Update weights for the first layer
+    updateWeightMatrixAndTheta(w1,th1,errors[0],)
+
+    //Free up memory used
+    delete errors[0]; delete errors[1]; delete errors[2];
     delete layerOne;
     delete layerTwo;
     delete outputLayer;
@@ -188,5 +198,19 @@ Network::~Network() {
     delete th1;
     delete th2;
     delete th3;
+}
+
+void Network::updateWeightMatrixAndTheta(WeightMatrix *w, Threshold* threshold, Errors *error, Activations *activations) {
+    for (int i=0;i<w->size();i++){
+        for (int j=0;j<w->at(i).size();j++)
+        {
+            w->at(i)[j]+=learningRate*error->at(i)*activations->at(j);
+        }
+
+        threshold->at(i)-=learningRate*error->at(i);
+    }
+
+
+
 }
 
