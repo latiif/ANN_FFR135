@@ -1,4 +1,4 @@
-# Install script for directory: /home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training
+# Install script for directory: /home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/latiif/Github/ANN_FR134_repo/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

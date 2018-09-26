@@ -5,9 +5,9 @@
 #include "Misc.h"
 #include <random>
 
-double Misc::generateRandom(double a, double b) {
+double Misc::generateRandom(double mean, double variance) {
     std::random_device rd;
-    std::uniform_real_distribution<> uni(a, b);
+    std::normal_distribution<> uni(mean, variance);
     return uni(rd);
 
 }
