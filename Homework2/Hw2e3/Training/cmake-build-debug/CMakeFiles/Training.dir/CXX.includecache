@@ -12,9 +12,25 @@ string
 
 /home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Misc.h
 
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.cpp
+Network.h
 /home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.h
 vector
 /home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/vector
+math.h
+-
+random
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/random
+Misc.h
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Misc.h
+fstream
+-
+
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/Network.h
+vector
+/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/vector
+string
+-
 
 /home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/main.cpp
 iostream

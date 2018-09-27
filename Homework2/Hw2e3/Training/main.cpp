@@ -5,8 +5,9 @@
 #include "Misc.h"
 #include <cstdlib>
 
-#define T 10000
+
 #define V 5000
+#define ETA 0.0099
 
 int main(int argc, char **argv) {
     double classificationError = 100.0;
@@ -19,31 +20,27 @@ int main(int argc, char **argv) {
     m1 = atoi(argv[1]);
     m2 = atoi(argv[2]);
 
+    auto T = train->total;
+    auto EPOCHS = T * 100;
 
-    auto network = new Network(m1, m2, 0.01);
+    double bestClassification = 100.0;
+    double lastClassification = 0.0;
 
-
-    auto stochasticWalk = new std::vector<int>(T);
-    for (int i = 0; i < T; i ++) stochasticWalk->at(i) = i;
-    std::random_shuffle(stochasticWalk->begin(), stochasticWalk->end());
-
-    bool target = false;
+    auto network = new Network(m1, m2, ETA);
+    Network *bestNetwork = nullptr;
 
     int count = 0;
 
-    while (!stochasticWalk->empty()) {
-        int mu = stochasticWalk->back();
-        stochasticWalk->pop_back();
+    while (count ++ < EPOCHS) {
 
-        target = !target;
+        int mu = Misc::generateRandomUniform(0, T - 1);
 
 
-        count ++;
         network->train(train->samples[mu], 2, train->targets[mu]);
 
-        if (count % 50 == 0) {
+        if (count % T == 0) {
             int correct = 0;
-            int pValue = 5000;
+            int pValue = V;
             classificationError = 0.0;
             for (int i = 0; i < pValue; i ++) {
                 auto guess = network->predict(validation->samples[i], 2);
@@ -55,33 +52,51 @@ int main(int argc, char **argv) {
             classificationError = (classificationError * 1.0) / (2 * pValue);
 
 
-            if (classificationError < 0.14) {
-                std::cout << correct << '\t' << classificationError << '\t' << "at patch\t" << count << '\t' << m1
-                          << '\t' << m2
-                          << std::endl;
-                int c = 0;
-                for (double x = -1;x<=1;x+=0.02){
-                    for (double y = -1;y<=1;y+=0.02){
-                        c++;
-                        auto input = new Inputs(2);
-                        (*input)[0] = x;
-                        (*input)[1] = y;
-                        auto res = network->predict(input);
-                        std::cout<<(res==-1?0:1);
-                        if (c%100==0) std::cout<<std::endl;
-                        delete(input);
-                    }
+            if (classificationError <= 1) {
+
+                if (classificationError < bestClassification) {
+                    bestClassification = classificationError;
+                    delete bestNetwork;
+                    bestNetwork = network->makeCopy();
                 }
 
-                break;
+                if (classificationError == lastClassification) {
+                    break;
+                }
+                lastClassification = classificationError;
             }
-
         }
+    }
+
+    if (bestClassification < 0.12 && bestNetwork != nullptr) {
+        bestNetwork->saveCSV();
     }
 
 
 
+    /// Since the problem is 2D, we can ask the network to imagine what it has learned
+    if (bestNetwork != nullptr) {
+        int c = 0;
+        for (double x = - 1; x <= 1; x += 0.02) {
+            for (double y = - 1; y <= 1; y += 0.02) {
+                c ++;
+                auto input = new Inputs(2);
+                (*input)[0] = x;
+                (*input)[1] = y;
+                auto res = bestNetwork->predict(input);
+                std::cout << (res == - 1 ? 0 : 1);
+                if (c % 100 == 0) std::cout << std::endl;
+                delete (input);
+            }
+        }
+        std::cout << "Best:\t" << bestClassification << "\tETA:\t" << ETA << '\t' << m1
+                  << '\t' << m2
+                  << std::endl;
+    }
+
+
     delete network;
+    delete bestNetwork;
 
 
     return 0;

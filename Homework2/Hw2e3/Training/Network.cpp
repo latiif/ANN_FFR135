@@ -7,6 +7,7 @@
 #include <math.h>
 #include "random"
 #include "Misc.h"
+#include <fstream>
 
 Network::Network(int M1, int M2, double learningRate) {
 
@@ -41,7 +42,7 @@ void Network::setSize(WeightMatrix *weightMatrix, int d1, int d2) {
 
     for (int i = 0; i < d1; i ++)
         for (int j = 0; j < d2; j ++)
-            (*weightMatrix)[i][j] = Misc::generateRandom(0,1);
+            (*weightMatrix)[i][j] = Misc::generateRandomNormal(0, 1);
 
 }
 
@@ -201,5 +202,57 @@ Network::updateWeightMatrixAndTheta(WeightMatrix *w, Threshold *threshold, Error
     }
 
 
+}
+
+Network *Network::makeCopy() {
+    auto res = new Network(th1->size(), th2->size(), learningRate);
+
+    res->w1 = new WeightMatrix(*w1);
+    res->w2 = new WeightMatrix(*w2);
+    res->w3 = new WeightMatrix(*w3);
+
+    res->th1 = new Threshold(*th1);
+    res->th2 = new Threshold(*th2);
+    res->th3 = new Threshold(*th3);
+
+
+    return res;
+}
+
+void Network::saveCSV() {
+
+    writeMatrix(w1, "w1.csv");
+    writeMatrix(w2, "w2.csv");
+    writeMatrix(w3, "w3.csv");
+
+    writeThreshold(th1, "t1.csv");
+    writeThreshold(th2, "t2.csv");
+    writeThreshold(th3, "t3.csv");
+}
+
+void Network::writeMatrix(WeightMatrix *w, const std::string filename) {
+    std::ofstream output;
+    output.open(filename);
+
+    for (int row = 0; row < w->size(); row ++) {
+        for (int col = 0; col < w->at(row).size(); col ++) {
+            output << w->at(row)[col];
+            if (col == w->at(row).size() - 1) { output << std::endl; }
+            else { output << " , "; }
+        }
+    }
+
+    output.close();
+}
+
+void Network::writeThreshold(Threshold *th, const std::string filename) {
+    std::ofstream output;
+    output.open(filename);
+
+    for (int row = 0; row < th->size(); row ++) {
+        output << th->at(row) << std::endl;
+    }
+
+    output.close();
 }
 

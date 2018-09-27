@@ -11,23 +11,25 @@ DataSet::DataSet(std::string filename) {
 
     std::ifstream ifs (filename, std::ifstream::in);
 
+    this->total  = 0;
     int nLines = 0;
     while (!ifs.eof())
     {
 
         double x,y;
-        int t;
+        double t;
         char temp;
 
-        ifs>>x>>temp>>y>>temp>>t>>temp;
+        ifs>>x>>temp>>y>>temp>>t;
 
 
-        targets[nLines] = t;
+        targets[nLines] = (int)t;
         samples[nLines][0] = x;
         samples[nLines][1] = y;
 
 
         nLines++;
     }
+    this->total = nLines - 1;
 
 }

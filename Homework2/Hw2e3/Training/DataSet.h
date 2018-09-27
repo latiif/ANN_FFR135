@@ -7,13 +7,16 @@
 
 #include "string"
 
-#define DATASET_LENGTH 10000
+#define MAX_DATASET_LENGTH 15000
 
 class DataSet {
 public:
-    double samples[DATASET_LENGTH][2];
-    int targets[DATASET_LENGTH];
+    double samples[MAX_DATASET_LENGTH][2];
+    int targets[MAX_DATASET_LENGTH];
+
     DataSet(std::string filename);
+
+    int total;
 };
 
 

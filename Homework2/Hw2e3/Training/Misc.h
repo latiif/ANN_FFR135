@@ -10,7 +10,9 @@ class Misc {
 
 public:
 
-    static double generateRandom(double a, double b);
+    static double generateRandomNormal(double a, double b);
+
+    static int generateRandomUniform(int a, int b);
 
     static double max(double a, double b);
 };
