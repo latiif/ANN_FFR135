@@ -1,3 +1,0 @@
-/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/latiif/GitHub Repositories/ANN_FFR135/Homework2/Hw2e3/Training/cmake-build-debug/CMakeFiles/Training.dir
