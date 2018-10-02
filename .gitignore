@@ -1,4 +1,6 @@
 *.*
+*.iml
+*.pyc
 !.gitattributes
 !.gitignore
 !readme.md
@@ -7,3 +9,5 @@
 !*.h
 !*.py
 !*.csv
+
+Homework2/hw2e1/__pycache__/
