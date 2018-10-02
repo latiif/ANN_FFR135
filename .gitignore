@@ -13,3 +13,6 @@
 Homework2/hw2e1/__pycache__/
 */__pycache__/
 */venv/
+ANN/.idea/
+ANN/.vscode/
+ANN/venv/
