@@ -1,3 +1,0 @@
-/home/latiif/Desktop/Files/Ann/hw2e2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/latiif/Desktop/Files/Ann/hw2e2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/latiif/Desktop/Files/Ann/hw2e2/cmake-build-debug/CMakeFiles/hw2e2.dir
