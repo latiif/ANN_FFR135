@@ -1,10 +1,9 @@
-*
+*.*
 !.gitattributes
 !.gitignore
 !readme.md
 !.gitkeep
-!*.py
 !*.cpp
 !*.h
+!*.py
 !*.csv
-!*/
