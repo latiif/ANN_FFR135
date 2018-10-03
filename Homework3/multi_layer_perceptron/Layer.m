@@ -30,7 +30,7 @@ classdef Layer < handle
             obj.activations = obj.a_function(obj.fields);
             
             if obj.isOutput
-                out = sgn(obj.activations);
+                out = arrayfun(@(x) sgn(x),obj.activations);
             else
                 out = obj.activations;
             end
@@ -69,7 +69,8 @@ classdef Layer < handle
         
         
         function updateLayer(obj, rate, inputs,errors)
-            obj.weightMatrix = obj.weightMatrix + (rate*errors* inputs.');
+            nInputs = max(size(inputs));
+            obj.weightMatrix = obj.weightMatrix + (rate*errors* reshape(inputs,[1 nInputs]));
             obj.thresholds = obj.thresholds - (rate *errors);
             
         end

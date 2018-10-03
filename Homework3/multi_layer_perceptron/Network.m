@@ -55,11 +55,11 @@ classdef Network < handle
             end
             
             disp("complete")
-            %obj.layers(1).updateLayer(obj.learningRate,pattern);
+            obj.layers(1).updateLayer(obj.learningRate,patterns(:,pattern),batchErrors{1});
 
-            %for l = 2:obj.nLayers
-             %   obj.layers(l).updateLayer(obj.learningRate,obj.layers(l-1).activations);
-            %end            
+            for l = 2:obj.nLayers
+                obj.layers(l).updateLayer(obj.learningRate,batchActivations{l-1},batchErrors{l});
+            end            
         end
         
     end
