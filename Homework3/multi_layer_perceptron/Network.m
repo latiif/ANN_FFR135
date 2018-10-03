@@ -25,7 +25,7 @@ classdef Network < handle
         function prediction =  predict(obj,pattern)
             
             for l = 1:obj.nLayers
-                pattern = obj.layers(l).fire(pattern);
+                pattern = (obj.layers(l).fire(pattern)).';
             end
             
             prediction  = pattern;
@@ -46,17 +46,20 @@ classdef Network < handle
                 obj.predict(patterns(:,pattern));
                 
                 batchErrors{obj.nLayers} = batchErrors{obj.nLayers} + obj.layers(obj.nLayers).backpropagate(desiredTargets(:,pattern));
+                batchActivations{obj.nLayers} = batchActivations{obj.nLayers} + obj.layers(obj.nLayers).activations;
 
                 for l = obj.nLayers-1:-1:1
                    batchErrors{l} = batchErrors{l} + obj.layers(l).backpropagate(obj.layers(l+1));
-                end
-
-                obj.layers(1).updateLayer(obj.learningRate,pattern);
-
-                for l = 2:obj.nLayers
-                    obj.layers(l).updateLayer(obj.learningRate,obj.layers(l-1).activations);
+                   batchActivations{l} = batchActivations{l} + obj.layers(l).activations;
                 end
             end
+            
+            disp("complete")
+            %obj.layers(1).updateLayer(obj.learningRate,pattern);
+
+            %for l = 2:obj.nLayers
+             %   obj.layers(l).updateLayer(obj.learningRate,obj.layers(l-1).activations);
+            %end            
         end
         
     end

@@ -13,7 +13,7 @@ classdef Layer < handle
     methods
         function obj = Layer(numberOfNeurons,nInputs,activation_function, isOutputLayer)
             obj.nNeurons = numberOfNeurons;
-            obj.weightMatrix = normrnd(0,1,[obj.nNeurons,nInputs]);
+            obj.weightMatrix = normrnd(0,1/(sqrt(nInputs)),[obj.nNeurons,nInputs]);
             obj.thresholds = zeros(obj.nNeurons,1);
             
             obj.fields= zeros(obj.nNeurons,1);
@@ -25,7 +25,7 @@ classdef Layer < handle
         end
         
         function out = fire(obj,input)
-            obj.fields = obj.weightMatrix * input - obj.thresholds;
+            obj.fields = ( obj.weightMatrix * input ) - obj.thresholds;
             
             obj.activations = obj.a_function(obj.fields);
             
@@ -38,13 +38,16 @@ classdef Layer < handle
         
         
         function errors_vector = backpropagate(obj,target)
-            dff = @(x) (1 - tanh(x).^2);
+           
             
+            dff = @(x) obj.a_function(x).*(1- obj.a_function(x));
+
             obj.errors = zeros(obj.nNeurons,1);
             
             
             if (obj.isOutput)
-                obj.errors = dff(obj.fields) .* (target - obj.activations);
+           
+                obj.errors = (dff(obj.fields)).' - (target - (obj.activations).');
                 
                 errors_vector = obj.errors;
             else
@@ -65,9 +68,9 @@ classdef Layer < handle
         
         
         
-        function updateLayer(obj, rate, inputs)
-            obj.weightMatrix = obj.weightMatrix + (rate*obj.errors* inputs.');
-            obj.thresholds = obj.thresholds - (rate *obj.errors);
+        function updateLayer(obj, rate, inputs,errors)
+            obj.weightMatrix = obj.weightMatrix + (rate*errors* inputs.');
+            obj.thresholds = obj.thresholds - (rate *errors);
             
         end
         
