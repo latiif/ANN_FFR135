@@ -38,14 +38,14 @@ classdef Network < handle
             batchActivations = cell(obj.nLayers,1);
             
             for layer = 1:obj.nLayers
-                batchErrors{layer} = zeros(1,obj.layers(layer).nNeurons);
+                batchErrors{layer} = zeros(obj.layers(layer).nNeurons,1);
                 batchActivations{layer} = zeros(1,obj.layers(layer).nNeurons);
             end
             
             for pattern = 1:batchSize
                 obj.predict(patterns(:,pattern));
                 
-                batchErrors{obj.nLayers} = batchErrors{obj.nLayers} + obj.layers(obj.nLayers).backpropagate(desiredTargets(:,pattern));
+                batchErrors{obj.nLayers} = batchErrors{obj.nLayers}+ obj.layers(obj.nLayers).backpropagate(desiredTargets(:,pattern));
                 batchActivations{obj.nLayers} = batchActivations{obj.nLayers} + obj.layers(obj.nLayers).activations;
 
                 for l = obj.nLayers-1:-1:1
