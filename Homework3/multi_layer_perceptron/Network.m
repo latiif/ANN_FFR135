@@ -25,7 +25,7 @@ classdef Network < handle
         function prediction =  predict(obj,pattern)
             
             for l = 1:obj.nLayers
-                pattern = (obj.layers(l).fire(pattern)).';
+                pattern = (obj.layers(l).fire(pattern));
             end
             
             prediction  = pattern;
@@ -39,26 +39,27 @@ classdef Network < handle
             
             for layer = 1:obj.nLayers
                 batchErrors{layer} = zeros(obj.layers(layer).nNeurons,1);
-                batchActivations{layer} = zeros(1,obj.layers(layer).nNeurons);
+                batchActivations{layer} = zeros(obj.layers(layer).nNeurons,1);
             end
             
             for pattern = 1:batchSize
                 obj.predict(patterns(:,pattern));
                 
-                batchErrors{obj.nLayers} = batchErrors{obj.nLayers}+ obj.layers(obj.nLayers).backpropagate(desiredTargets(:,pattern));
-                batchActivations{obj.nLayers} = batchActivations{obj.nLayers} + obj.layers(obj.nLayers).activations;
+                batchErrors{obj.nLayers,pattern} = obj.layers(obj.nLayers).backpropagate(desiredTargets(:,pattern));
+                batchActivations{obj.nLayers,pattern} = batchActivations{obj.nLayers} + obj.layers(obj.nLayers).activations;
 
                 for l = obj.nLayers-1:-1:1
-                   batchErrors{l} = batchErrors{l} + obj.layers(l).backpropagate(obj.layers(l+1));
-                   batchActivations{l} = batchActivations{l} + obj.layers(l).activations;
+                   batchErrors{l,pattern} = obj.layers(l).backpropagate(obj.layers(l+1));
+                   batchActivations{l,pattern} =  obj.layers(l).activations;
                 end
             end
             
             disp("complete")
-            obj.layers(1).updateLayer(obj.learningRate,patterns(:,pattern),batchErrors{1});
+
+            obj.layers(1).updateLayer(obj.learningRate,patterns,[batchErrors{1,:}]);
 
             for l = 2:obj.nLayers
-                obj.layers(l).updateLayer(obj.learningRate,batchActivations{l-1},batchErrors{l});
+                obj.layers(l).updateLayer(obj.learningRate,[batchActivations{l-1,:}],[batchErrors{l,:}]);
             end            
         end
         

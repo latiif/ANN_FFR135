@@ -38,16 +38,16 @@ classdef Layer < handle
         
         
         function errors_vector = backpropagate(obj,target)
-           
+            
             
             dff = @(x) obj.a_function(x).*(1- obj.a_function(x));
-
+            
             obj.errors = zeros(obj.nNeurons,1);
             
             
             if (obj.isOutput)
-           
-                obj.errors = (dff(obj.fields)).' - (target - (obj.activations).');
+                
+                obj.errors = (dff(obj.fields)) - (target - (obj.activations));
                 
                 errors_vector = obj.errors;
             else
@@ -69,9 +69,25 @@ classdef Layer < handle
         
         
         function updateLayer(obj, rate, inputs,errors)
-            nInputs = max(size(inputs));
-            obj.weightMatrix = obj.weightMatrix + (rate*errors* reshape(inputs,[1 nInputs]));
-            obj.thresholds = obj.thresholds - (rate *errors);
+            [M,N] = size(obj.weightMatrix);
+            mb = size(errors,2);
+            
+            for m = 1:M
+                for n = 1:N
+                    sumW = 0;
+                    for u = 1:mb
+                        sumW = sumW + errors(m,u)*inputs(n,u);
+                    end
+                    
+                    obj.weightMatrix(m,n)= obj.weightMatrix(m,n) + rate*sumW;
+                end
+                
+                sumT = 0;
+                for u = 1:mb
+                    sumT = sumT + errors(m,u);
+                end
+                obj.thresholds(m) = obj.thresholds(m) - rate*sumT;
+            end
             
         end
         
