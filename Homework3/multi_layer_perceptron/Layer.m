@@ -29,11 +29,11 @@ classdef Layer < handle
             
             obj.activations = obj.a_function(obj.fields);
             
-            if obj.isOutput
-                out = arrayfun(@(x) sgn(x),obj.activations);
-            else
+            %if obj.isOutput
+            %    out = arrayfun(@(x) sgn(x),obj.activations);
+            %else
                 out = obj.activations;
-            end
+            %end
         end
         
         
@@ -47,7 +47,7 @@ classdef Layer < handle
             
             if (obj.isOutput)
                 
-                obj.errors = (dff(obj.fields)) - (target - (obj.activations));
+                obj.errors = (dff(obj.fields)) - ((obj.activations) - target);
                 
                 errors_vector = obj.errors;
             else
@@ -78,7 +78,6 @@ classdef Layer < handle
                     for u = 1:mb
                         sumW = sumW + errors(m,u)*inputs(n,u);
                     end
-                    
                     obj.weightMatrix(m,n)= obj.weightMatrix(m,n) + rate*sumW;
                 end
                 

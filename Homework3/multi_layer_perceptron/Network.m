@@ -31,6 +31,12 @@ classdef Network < handle
             prediction  = pattern;
         end
         
+        function correct = checkGuess(obj,pattern,target)
+            res = obj.predict(pattern);
+            res = arrayfun(@(x) sgn(x),res);
+            correct = isequal(res,target);
+        end
+        
         function train(obj,patterns, desiredTargets, batchSize)
             % TODO fire, backpropagate, update weights
             
@@ -54,7 +60,7 @@ classdef Network < handle
                 end
             end
             
-            disp("complete")
+            %disp("complete")
 
             obj.layers(1).updateLayer(obj.learningRate,patterns,[batchErrors{1,:}]);
 
