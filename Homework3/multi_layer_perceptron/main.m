@@ -19,29 +19,10 @@ sigmoid  = @(x) 1.0 ./ ( 1.0 + exp(-x));
 
 
 
-network = Network([784 100 100 10],0.3,sigmoid);
+%network = ;
 
-tEl = animatedline;
-vEl = animatedline;
-
+NetworkTrain(Network([784 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
 
 
-tEl.Color = "green";
-vEl.Color = "blue";
 
-axis([1 30 0 0.3])
-
-for epoch = 1:30
-    [tE,vE ] = EpochTrain(network,10,xTrain,tTrain,xValid,tValid);
-
-    
-    addpoints(tEl,epoch,tE);
-    hold on
-
-    addpoints(vEl,epoch,vE);
-    hold on
-    
-    drawnow
-    
-end
 
