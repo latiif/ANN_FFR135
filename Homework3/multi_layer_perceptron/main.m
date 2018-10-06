@@ -19,9 +19,9 @@ sigmoid  = @(x) 1.0 ./ ( 1.0 + exp(-x));
 
 
 
-%network = ;
 
-NetworkTrain(Network([784 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
+NetworkTrain(Network([784 30 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
+
 
 
 

@@ -1,7 +1,9 @@
 function NetworkTrain(network,nEpochs,batchSize,trainingSet,trainingSetTargets,validationSet,validationSetTargets)
     
 
-    figure
+    figure('NumberTitle', 'off', 'Name', network.getDescription());
+
+    title("Classificaiton Error as a function of epoch")
     
     tEl = animatedline;
     vEl = animatedline;

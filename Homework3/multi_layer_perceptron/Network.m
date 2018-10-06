@@ -69,5 +69,18 @@ classdef Network < handle
             end            
         end
         
+        function desc = getDescription(obj)
+        desc = "L = "+ num2str(obj.nLayers)+", ";
+        for layer = 1:obj.nLayers
+            desc = desc + "w" + num2str(layer)+"= ";
+            [w,h] = size(obj.layers(layer).weightMatrix);
+            desc = desc + num2str(w) + "x" + num2str(h) +" ";
+        end
+        
     end
+    end
+    
+    
+   
+    
 end
