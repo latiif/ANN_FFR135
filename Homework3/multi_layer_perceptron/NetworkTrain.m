@@ -1,7 +1,7 @@
 function NetworkTrain(network,nEpochs,batchSize,trainingSet,trainingSetTargets,validationSet,validationSetTargets)
     
 
-    figure('NumberTitle', 'off', 'Name', network.getDescription());
+    curr = figure('NumberTitle', 'off', 'Name', network.getDescription());
 
     title("Classificaiton Error as a function of epoch")
     
@@ -32,6 +32,7 @@ function NetworkTrain(network,nEpochs,batchSize,trainingSet,trainingSetTargets,v
 
         set(gca, 'YScale', 'log')
         drawnow
+        saveas(curr,curr.Name+".png")
 
     end
 end

@@ -18,9 +18,17 @@ tTrain = tTrain(:,shuffleFactor);
 sigmoid  = @(x) 1.0 ./ ( 1.0 + exp(-x));
 
 
-
-
-NetworkTrain(Network([784 30 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
+parpool(2)
+parfor i = 1:2
+    
+    if i==1
+        NetworkTrain(Network([784 30 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
+    end
+    
+    if i==2
+        NetworkTrain(Network([784 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
+    end
+end
 
 
 
