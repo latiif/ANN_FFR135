@@ -77,7 +77,24 @@ classdef Network < handle
             desc = desc + num2str(w) + "x" + num2str(h) +" ";
         end
         
-    end
+        end
+    
+        function H = getEnergyFunction(obj, dataset, targets)
+            H = 0;
+            P = size(dataset,2);
+            N = obj.layers(obj.nLayers).nNeurons;
+            
+            
+          
+            for mu = 1:P
+                guess = obj.predict(dataset(:,mu));
+                for i = 1:N
+                    H = H + (targets(i,mu) - guess(i,1))^2;
+                end
+            end
+            
+            H = 0.5*H;
+        end
     end
     
     

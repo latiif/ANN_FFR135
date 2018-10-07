@@ -17,22 +17,7 @@ tTrain = tTrain(:,shuffleFactor);
 
 sigmoid  = @(x) 1.0 ./ ( 1.0 + exp(-x));
 
-
-parpool(3)
-parfor i = 1:3
-    
-    if i==1
-        NetworkTrain(Network([784 30 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
-    end
-    
-    if i==2
-        NetworkTrain(Network([784 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
-    end
-    
-    if i==3
-        NetworkTrain(Network([784 100 10],0.3,sigmoid),30,10,xTrain,tTrain,xValid,tValid);
-    end
-end
+LearningSpeed(Network([784 30 30 30 10],0.003,sigmoid),50,10,xTrain,tTrain);
 
 
 

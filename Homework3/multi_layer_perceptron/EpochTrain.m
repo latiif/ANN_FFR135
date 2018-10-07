@@ -22,17 +22,18 @@ function [trainError, validationError] = EpochTrain(network,batchSize,trainingSe
     trainError = (datasetSize - correct)/(2*datasetSize);
     
     
-    waitbar(1,f,"Calculating Validation Error");
-    
-    correct = 0;
-    datasetSize = size(validationSet,2);
-    for p = 1:datasetSize
-        if (network.checkGuess(validationSet(:,p),validationSetTargets(:,p)))
-            correct = correct +1;
+    if (~ isequal(validationSet,[]))
+        waitbar(1,f,"Calculating Validation Error");
+
+        correct = 0;
+        datasetSize = size(validationSet,2);
+        for p = 1:datasetSize
+            if (network.checkGuess(validationSet(:,p),validationSetTargets(:,p)))
+                correct = correct +1;
+            end
         end
+        validationError = (datasetSize - correct)/(2*datasetSize);
     end
-    validationError = (datasetSize - correct)/(2*datasetSize);
-    
     
     
     close(f)
