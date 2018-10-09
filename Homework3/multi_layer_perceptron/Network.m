@@ -12,7 +12,7 @@ classdef Network < handle
             
             obj.a_function = activation;
             obj.nLayers = length(sizes)-1;
-            
+           
             for l = 1:obj.nLayers
                 t = Layer(sizes(l+1),sizes(l),activation,false);
                 obj.layers = [obj.layers; t];
