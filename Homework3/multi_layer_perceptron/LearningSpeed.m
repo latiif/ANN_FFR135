@@ -33,7 +33,7 @@ xlim([0 nEpochs])
 U = zeros(network.nLayers,nEpochs+1);
 
 for l = 1:network.nLayers
-    U_l = (network.layers(l).thresholds).^(-1) * H;
+    U_l = (network.layers(l).errors);
     U_l = norm(U_l);
     U(l,1) = U_l;
 end
@@ -57,7 +57,7 @@ for epoch = 1:nEpochs
     hold off
     
     for l = 1:network.nLayers
-        U_l = (network.layers(l).thresholds).^(-1) * H;
+        U_l = (network.layers(l).errors);
         U_l = norm(U_l);
         U(l,epoch) = U_l;
         plot(0:epoch,U(l,1:epoch+1),"DisplayName","Layer "+num2str(l));
