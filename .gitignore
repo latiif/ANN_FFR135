@@ -11,6 +11,9 @@
 !*.csv
 !*.m
 !*.pdf
+!*.bmp
+!*.jpg
+!*.eps
 
 Homework2/hw2e1/__pycache__/
 */__pycache__/

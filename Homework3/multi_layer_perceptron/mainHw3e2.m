@@ -1,5 +1,5 @@
 
-[xTrain, tTrain, xValid, tValid, xTest, tTest] = LoadMNIST(1);
+[xTrain, tTrain, xValid, tValid, xTest, tTest] = LoadMNIST(2);
 
 mean = calculateMean(xTrain);
 [bits, patterns ] = size(xTrain);
