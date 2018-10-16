@@ -1,11 +1,10 @@
 [xTrain, tTrain, xValid, tValid, xTest, tTest] = LoadMNIST(3);
 
-n1 = [ ...
+n2 = [ ...
     imageInputLayer([28 28 1])
     fullyConnectedLayer(100)
-    reluLayer
     fullyConnectedLayer(100)
-    reluLayer
+    fullyConnectedLayer(100)
     fullyConnectedLayer(10)
     softmaxLayer
     classificationLayer
@@ -23,7 +22,8 @@ options = trainingOptions('sgdm', ...
     'MiniBatchSize',8192, ...
     'Plots','training-progress');
 
-net = trainNetwork(xTrain,tTrain,n1,options);
+net = trainNetwork(xTrain,tTrain,n2,options);
+
 
 
 disp("Train Classification Error")
@@ -34,5 +34,3 @@ sum((abs(grp2idx(net.classify(xValid))-grp2idx(tValid))))/(size(tValid,1)*2)
 
 disp("Test Classification Error")
 sum((abs(grp2idx(net.classify(xTest))-grp2idx(tTest))))/(size(tTest,1)*2)
-
-
