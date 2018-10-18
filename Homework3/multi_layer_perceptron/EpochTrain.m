@@ -12,27 +12,25 @@ function [trainError, validationError] = EpochTrain(network,batchSize,trainingSe
     
     waitbar(1,f,"Calculating Train Error");
     
-    correct = 0;
+    counter = 0;
     datasetSize = size(trainingSet,2);
     for p = 1:datasetSize
-        if (network.checkGuess(trainingSet(:,p),trainingSetTargets(:,p)))
-            correct = correct +1;
-        end
+        %%counter = counter + abs( find(network.checkGuess(trainingSet(:,p))==1,1) - find(trainingSetTargets(:,p))==1);
+        counter = counter + sum(abs(network.checkGuess(trainingSet(:,p))-trainingSetTargets(:,p)));
     end
-    trainError = (datasetSize - correct)/(2*datasetSize);
+    trainError = counter/(2*datasetSize);
     
     
     if (~ isequal(validationSet,[]))
         waitbar(1,f,"Calculating Validation Error");
 
-        correct = 0;
+        counter = 0;
         datasetSize = size(validationSet,2);
         for p = 1:datasetSize
-            if (network.checkGuess(validationSet(:,p),validationSetTargets(:,p)))
-                correct = correct +1;
-            end
+           % counter = counter + abs(find(network.checkGuess(validationSet(:,p))==1,1) - find(validationSetTargets(:,p))==1);
+           counter = counter + sum(abs(network.checkGuess(validationSet(:,p))-validationSetTargets(:,p)));
         end
-        validationError = (datasetSize - correct)/(2*datasetSize);
+        validationError = (counter)/(2*datasetSize);
     end
     
     

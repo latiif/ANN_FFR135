@@ -31,10 +31,14 @@ classdef Network < handle
             prediction  = pattern;
         end
         
-        function correct = checkGuess(obj,pattern,target)
+        function correct = checkGuess(obj,pattern)
             res = obj.predict(pattern);
-            res = arrayfun(@(x) sgn(x),res);
-            correct = isequal(res,target);
+            correct = arrayfun(@(x) sgn(x) ,res);
+            return 
+            [~,idx] = max(res);
+            
+            correct = zeros(size(res));
+            correct(idx)=1;
         end
         
         function train(obj,patterns, desiredTargets, batchSize)
